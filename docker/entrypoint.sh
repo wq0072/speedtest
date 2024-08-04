@@ -27,11 +27,9 @@ if [ "$MODE" == "backend" ]; then
   fi
 fi
 
-# Set up index.php for frontend-only or standalone modes
-if [[ "$MODE" == "frontend" || "$MODE" == "dual" ]]; then
-  cp /speedtest/frontend.php /var/www/html/index.php
-elif [ "$MODE" == "standalone" ]; then
-  cp /speedtest/standalone.php /var/www/html/index.php
+# Set up unified index.php
+if [ "$MODE" != "backend" ]; then
+  cp /speedtest/ui.php /var/www/html/index.php
 fi
 
 # Apply Telemetry settings when running in standalone or frontend mode and telemetry is enabled

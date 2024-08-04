@@ -37,6 +37,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Fetch the ipinfo database file using curl if API key is defined
+      - name: Fetch DB from ipinfo.io
+        # IPINFO_APIKEY is set in https://github.com/librespeed/speedtest/settings/secrets/actions
+        run: |
+          if [ -z "${{ secrets.IPINFO_APIKEY }}" ]; then
+            echo "Warning: IPINFO_APIKEY is not defined."
+          else
+            curl -L https://ipinfo.io/data/free/country_asn.mmdb?token=${{ secrets.IPINFO_APIKEY }} -o backend/country_asn.mmdb
+          fi
+
       # Set up BuildKit Docker container builder to be able to build
       # multi-platform images and export cache
       # https://github.com/docker/setup-buildx-action
