@@ -71,6 +71,8 @@ jobs:
         with:
           images: ${{ matrix.image }}
           tags: |
+            type=ref,event=branch
+            type=ref,event=pr
             # set latest tag for default branch
             type=raw,value=latest${{ matrix.flavour }},enable={{is_default_branch}}
             type=semver,pattern={{version}}
