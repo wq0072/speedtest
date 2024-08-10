@@ -77,7 +77,7 @@ To use this function, you will need a database. The test supports MySQL, Postgre
 
 This step is only required for MySQL, PostgreSQL and MSSQL. If you want to use SQLite, skip to the next step.
 
-Log into your database using phpMyAdmin or a similar software and create a new database. Inside the `results` folder you will find `telemetry_mysql.sql`, `telemetry_postgresql.sql` and `telemetry_mssql.sql`, which are templates for MySQL and PostgreSQL respectively. Import the one you need, and you will see a `speedtest_users` table in the database. You can delete the templates afterwards.
+Log into your database using phpMyAdmin or a similar software and create a new database. Inside the `results` folder you will find `telemetry_mysql.sql`, `telemetry_postgresql.sql` and `telemetry_mssql.sql`, which are templates for MySQL, PostgreSQL and MSSQL respectively. Import the one you need, and you will see a `speedtest_users` table in the database. You can delete the templates afterwards.
 
 ##### Configuring telemetry
 

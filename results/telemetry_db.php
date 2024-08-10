@@ -70,7 +70,7 @@ function getPdo($returnErrorMessage = false)
 			if($MsSql_WindowsAuthentication){
 				return new PDO($dsn, "", "", $pdoOptions);
 			} else {
-				return new PDO($dsn, $MySql_username, $MySql_password, $pdoOptions);
+				return new PDO($dsn, $MsSql_username, $MsSql_password, $pdoOptions);
 			}
         }
 
