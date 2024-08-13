@@ -5,9 +5,9 @@ RUN apk add --quiet --no-cache \
     bash \
     apache2 \
     apache2-ssl \
-    php82-apache2 \
-    php82-ctype \
-    php82-openssl \
+    php83-apache2 \
+    php83-ctype \
+    php83-openssl \
     freetype-dev \
     libjpeg-turbo-dev \
     libpng-dev \
