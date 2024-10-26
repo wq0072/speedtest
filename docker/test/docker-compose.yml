@@ -78,3 +78,27 @@ services:
     environment: *env_vars_mysql
     ports:
       - 9126:8080
+
+  ###### SQLITE ######
+  speedtest-debian-sqlite:
+    # check at http://localhost:9125/results/sanitycheck.php
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    environment: &env_vars_sqlite
+      - PASSWORD=gimmeTheStats1337
+      - EMAIL=test@example.com
+      - ENABLE_ID_OBFUSCATION=true
+      - MODE=standalone
+      - REDACT_IP_ADDRESSES=true
+      - TELEMETRY=true
+    ports:
+      - 9127:8080
+
+  speedtest-alpine-sqlite:
+    build:
+      context: ../..
+      dockerfile: Dockerfile.alpine
+    environment: *env_vars_sqlite
+    ports:
+      - 9128:8080

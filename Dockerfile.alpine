@@ -54,6 +54,8 @@ ENV WEBPORT=8080
 # https://httpd.apache.org/docs/2.4/stopping.html#gracefulstop
 STOPSIGNAL SIGWINCH
 
+WORKDIR /var/www/html
+
 # Final touches
 EXPOSE ${WEBPORT}
 CMD ["bash", "/entrypoint.sh"]
