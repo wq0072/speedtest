@@ -9,7 +9,7 @@
 function I(i){return document.getElementById(i);}
 
 //LIST OF TEST SERVERS. See documentation for details if needed
-<?php 
+<?php
 $mode=getenv("MODE");
 if($mode=="standalone" || $mode=="dual"){ ?>
 var SPEEDTEST_SERVERS=[];
@@ -400,6 +400,7 @@ function initUI(){
 		html,body,#loading{
 			background:#202020;
 			color:#F4F4F4;
+			color-scheme:dark;
 		}
 		h1{
 			color:#E0E0E0;
